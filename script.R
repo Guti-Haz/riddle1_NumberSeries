@@ -11,7 +11,7 @@ fx=function(n){
 # through 100 tries, generate list of 6 numbers where fx(6th)==fx(1st) 
 n=1:100
 seq=11:99
-seq=seq[seq%%10!=0] # we don't like any zeroes here =(
+seq=seq[seq%%10!=0] # we don't like zeros!
 for(i in n){
   num1=sample(seq,1)
   num2=sample(seq,1)
@@ -20,7 +20,7 @@ for(i in n){
   num5=fx(num3)+fx(num4)
   num6=fx(num4)+fx(num5)
   if(fx(num5)+fx(num6)==num1){
-    print(paste0("i: ",i))
+    print(paste0("iterations: ",i))
     print(num1)
     print(num2)
     print(num3)
